@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStream - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <h1>CineStream</h1>
+        <p class="subtitle">Seu portal de filmes e séries</p>
+        
+        <div class="user-selection">
+            <h2>Selecione seu usuário</h2>
+            <div class="user-buttons">
+                <button class="user-btn" onclick="selectUser('Raphael')">Raphael</button>
+                <button class="user-btn" onclick="selectUser('Elisangela')">Elisangela</button>
+                <button class="user-btn" onclick="selectUser('Julia')">Julia</button>
+            </div>
+            
+            <div class="divider">ou</div>
+            
+            <div class="new-user">
+                <input type="text" id="newUsername" placeholder="Criar novo usuário">
+                <input type="password" id="newPassword" placeholder="Criar senha">
+                <button onclick="createUser()">Criar Conta</button>
+            </div>
+        </div>
+        
+        <div id="passwordModal" class="modal">
+            <div class="modal-content">
+                <h3>Digite sua senha</h3>
+                <p id="selectedUser"></p>
+                <input type="password" id="passwordInput" placeholder="Senha">
+                <div class="modal-buttons">
+                    <button onclick="login()">Entrar</button>
+                    <button onclick="closeModal()">Cancelar</button>
+                </div>
+                <p id="errorMsg" class="error"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+</body>
+</html>
